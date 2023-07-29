@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 
-<script src="https://d3js.org/d3.v6.js"></script>
-<script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
-<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script src="https://d3js.org/d3.v4.js"></script>
+<script src="https://unpkg.com/topojson-client@3"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-annotation/2.5.1/d3-annotation.min.js"></script>
 
 <head><title>Presidential Vote</title></head>
 
@@ -40,11 +40,11 @@ const data3 = [
    {group: "C", value: 30}
 ];
 
-Promise.all([
-d3.json("https://github.com/johnbiggan/CS416/blob/main/us-states.json")
-]).then(function (initialize) {
+//Promise.all([
+//d3.json("https://github.com/johnbiggan/CS416/blob/main/us-states.json")
+//]).then(function (initialize) {
 
-    let dataGeo = initialize[0]
+//    let dataGeo = initialize[0]
    
 // set the dimensions and margins of the graph
 const margin = {top: 30, right: 30, bottom: 70, left: 60},
@@ -64,15 +64,15 @@ const svg = d3.select("#my_dataviz")
   .append("g")
     .attr("transform", `translate(${margin.left},${margin.top})`);
 
-svg.selectAll("path")
-      .data(dataGeo.features)
-      .join("path")
-        .attr("fill", "#b8b8b8")
-        .attr("d", d3.geoPath()
-            .projection(projection)
-        )
-      .style("stroke", "none")
-      .style("opacity", .3)
+//svg.selectAll("path")
+//      .data(dataGeo.features)
+//      .join("path")
+//        .attr("fill", "#b8b8b8")
+//        .attr("d", d3.geoPath()
+//            .projection(projection)
+//        )
+//      .style("stroke", "none")
+//      .style("opacity", .3)
 
 // X axis
 const x = d3.scaleBand()
