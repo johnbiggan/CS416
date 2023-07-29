@@ -50,12 +50,10 @@ var ln_svg = d3.select(".line_viz")
   .append("g")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
-    
-d3.csv("1976-2020-president.csv", (d) => {
-    if(d["year"] == 2020) {
-            console.log(d)
-    }
-        })
+
+var pres_data = d3.csv("1976-2020-president.csv")
+
+console.log(pres_data)
     
 d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/3_TwoNumOrdered_comma.csv",
 
