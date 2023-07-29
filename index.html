@@ -6,7 +6,7 @@
 <script src="https://unpkg.com/topojson-client@3"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-annotation/2.5.1/d3-annotation.min.js"></script>
 
-<head><title>Presidential Vote</title></head>
+<head><title>Presidential Vote</title>
 
 <h1 align="center">Presidential Vote</h1>
 
@@ -19,6 +19,8 @@
 <button onclick="update(data1,'In one of the biggest upset in recent history, Hillary Clinton (D) was defeated by Donald Trump (R), though she won the popular vote. Virtually all polls had Clinton winning handily.')">2016</button>
 <button onclick="update(data1,'In the midst of COVID-19 and social unrest, former Vice President Joe Biden (D) was elected President.')">2020</button>
 
+</head>
+
 <div id="container">
     <div class="states_viz"></div>
     <div class="line_viz"></div>
@@ -29,6 +31,11 @@
 <script>
 
 var data1 = [1,2];
+
+var ln_data = [
+    {year: 1972, party: "Democratic", vote_perc: 98.5},
+    {year: 1972, party: "Republican", vote_perc: 98.5}
+];
 
 var margin = {top: 10, right: 30, bottom: 30, left: 60},
     width = 600 - margin.left - margin.right,
