@@ -51,7 +51,7 @@ var ln_svg = d3.select(".line_viz")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
 
-var pres_data = d3.csv("1976-2020-president.csv", function(d) {return d})
+var pres_data = d3.csv("1976-2020-president.csv", function(d) {return d;})
 
 console.log(pres_data)
     
