@@ -1,3 +1,5 @@
-#container {float: left;}
-.states_viz {float: left;}
-.line_viz {float: left;}
+#container,
+.states_viz,
+.line_viz {
+  float: left;
+}
