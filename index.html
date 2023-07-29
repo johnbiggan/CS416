@@ -50,7 +50,7 @@ var ln_svg = d3.select(".line_viz")
   .append("g")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
-d3.csv("https://github.com/johnbiggan/CS416/blob/main/1976-2020-president-ratio.csv", (d) => {
+d3.csv("1976-2020-president-ratio.csv", (d) => {
             console.log(d)
         })
 d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/3_TwoNumOrdered_comma.csv",
