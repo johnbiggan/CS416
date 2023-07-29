@@ -53,7 +53,7 @@ var ln_svg = d3.select(".line_viz")
 
 var pres_data = d3.csv("1976-2020-president.csv")
 
-console.log(pres_data)
+console.log(pres_data, function(d) {return d})
     
 d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/3_TwoNumOrdered_comma.csv",
 
