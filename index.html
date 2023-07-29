@@ -36,12 +36,10 @@ const data3 = [
 ];
 
 Promise.all([
-d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson"),
-d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/data_gpsLocSurfer.csv")
+d3.json("https://github.com/johnbiggan/CS416/blob/main/us-states.json")
 ]).then(function (initialize) {
 
     let dataGeo = initialize[0]
-    let data = initialize[1]
 
 const projection = d3.geoMercator()
     .center([0,20])                // GPS of location to zoom on
