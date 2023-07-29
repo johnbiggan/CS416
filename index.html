@@ -35,7 +35,17 @@ const data3 = [
    {group: "C", value: 30}
 ];
 
-  
+Promise.all([
+d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson")
+]).then(function (initialize) {
+
+    let dataGeo = initialize[0]
+
+const projection = d3.geoMercator()
+    .center([0,20])                // GPS of location to zoom on
+    .scale(99)                       // This is like the zoom
+    .translate([ width/2, height/2 ])
+   
 // set the dimensions and margins of the graph
 const margin = {top: 30, right: 30, bottom: 70, left: 60},
     width = 800 - margin.left - margin.right,
@@ -48,6 +58,17 @@ const svg = d3.select("#my_dataviz")
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
     .attr("transform", `translate(${margin.left},${margin.top})`);
+
+svg.append("g")
+      .selectAll("path")
+      .data(dataGeo.features)
+      .join("path")
+        .attr("fill", "#b8b8b8")
+        .attr("d", d3.geoPath()
+            .projection(projection)
+        )
+      .style("stroke", "none")
+      .style("opacity", .3)
 
 // X axis
 const x = d3.scaleBand()
