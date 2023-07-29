@@ -40,16 +40,16 @@ d3.json("https://github.com/johnbiggan/CS416/blob/main/us-states.json")
 ]).then(function (initialize) {
 
     let dataGeo = initialize[0]
-
-const projection = d3.geoMercator()
-    .center([0,20])                // GPS of location to zoom on
-    .scale(99)                       // This is like the zoom
-    .translate([ width/2, height/2 ])
    
 // set the dimensions and margins of the graph
 const margin = {top: 30, right: 30, bottom: 70, left: 60},
     width = 800 - margin.left - margin.right,
     height = 600 - margin.top - margin.bottom;
+
+const projection = d3.geoMercator()
+    .center([0,20])                // GPS of location to zoom on
+    .scale(99)                       // This is like the zoom
+    .translate([ (width + margin.left + margin.right)/2, (height + margin.top + margin.bottom)/2 ])
 
 // append the svg object to the body of the page
 const svg = d3.select("#my_dataviz")
