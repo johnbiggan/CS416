@@ -67,11 +67,11 @@ svg.append("g")
 // A function that create / update the plot for a given variable:
 function update(data) {
 
-  var u = svg.selectAll("rect")
+  var u = svg.selectAll("path")
     .data(data)
 
   u
-    .join("rect")
+    .join("path")
     .transition()
     .duration(1000)
       .attr("x", d => x(d.group))
