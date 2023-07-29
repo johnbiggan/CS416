@@ -18,8 +18,10 @@
 <button onclick="update(data7)">2016</button>
 <button onclick="update(data8)">2020</button>
 
-<div id="states_viz"></div>
-<div id="line_viz"></div>
+<div id="divContainer">
+    <div class="states_viz"></div>
+    <div class="line_viz"></div>
+</div>
 
 <script>
 
@@ -41,7 +43,7 @@ var ln_svg = d3.select("#line_viz")
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
     .attr("transform",
-          "translate("500 + margin.left + "," + margin.top + ")");
+          "translate(" + margin.left + "," + margin.top + ")");
 
 d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/3_TwoNumOrdered_comma.csv",
 
