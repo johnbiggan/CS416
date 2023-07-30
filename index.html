@@ -161,10 +161,3 @@ function update(ind) {
 update(0)
   
 </script>
-
-attr("d", d3.line()
-      .x(function(d) { return x(d.ser1); })
-      .y(function(d) { return y(d.ser2); }))
-      .attr("fill", "none")
-      .attr("stroke", "steelblue")
-      .attr("stroke-width", 2.5)
