@@ -148,9 +148,11 @@ function update(ind) {
 
     d3.select("#desc_viz")
         .transition()
+        .duration(1000)
         .text(desc_data[ind]);
     d3.select("#subtitle")
-        .transition
+        .transition()
+        .duration(1000)
         .text(yr_rg_data[ind]);
     
 }
