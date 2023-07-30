@@ -105,6 +105,11 @@ function update(ind) {
         // group the data: I want to draw one line per group
         var sumstat = d3.nest() // nest function allows to group the calculation per level of a factor
         .key(function(d) { return d.party_simplified;})
+        .rollup(function(leaves){
+            return d3.sum(leaves, function(d){
+                return d.percentvotes;
+            });
+        })
         .entries(data);
 
         // Draw the line
@@ -118,7 +123,7 @@ function update(ind) {
         .attr("d", function(d){
           return d3.line()
             .x(function(d) { return x(d.year); })
-            .y(function(d) { return y(d.percentvotes); })
+            .y(function(d) { return y(d.values); })
             (d.values)
         })
     })
