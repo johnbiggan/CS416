@@ -111,10 +111,10 @@ function update(ind) {
                 return c.candidatevotes;
             })
         })
-        .entries([data.filter(function(d){return +d.year<=yr_data[ind];})]);
+        .entries(data.filter(function(d){return +d.year<=yr_data[ind];}));
 
         console.log(sumstat);
-        console.log("Test7");
+        console.log("Test8");
         console.log(yr_data[ind]);
 
         var u = ln_svg.selectAll(".line")
