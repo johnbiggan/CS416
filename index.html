@@ -151,7 +151,7 @@ function update(ind) {
         .attr("d", d3.line()
                 .x(function(d) { return x(d.key);})
                 .y(function(d) { return y(d.value);})
-                //(d.values)
+                (d.values)
         )
         .attr("fill", "none")
         .attr("stroke", d => party_scale(d.key))
