@@ -70,24 +70,25 @@ var ln_svg = d3.select(".line_viz")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
 
-// Parse the date / time
-var parseDate = d3.time.format("%b %Y").parse; 
-
 // Set the ranges
 var x = d3.time.scale().range([0, width]);
 var y = d3.scale.linear().range([height, 0]);
 
 // Define the axes
-var xAxis = d3.svg.axis().scale(x)
+var x_axis = d3.svg.axis().scale(x)
     .orient("bottom").ticks(13);
 
-var yAxis = d3.svg.axis().scale(y)
+var y_axis = d3.svg.axis().scale(y)
     .orient("left").ticks(4);
 
 // Define the line
-var priceline = d3.svg.line()
+var vote_line = d3.svg.line()
     .x(function(d) { return x(d.year); })
     .y(function(d) { return y(d.vote_perc); });
+
+var party_scale = d3.scaleOrdinal()
+    .domain(["Democratic", "Republican", "Libertarian", "Other"])
+    .range(["blue", "red", "yellow", "grey"]);
     
 d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/3_TwoNumOrdered_comma.csv",
 
