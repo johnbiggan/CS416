@@ -115,7 +115,7 @@ function update(ind) {
         console.log(sumstat);
         console.log(sumstat.filter(function(d){return d.key=="DEMOCRAT";}));
         //console.log(sumstat.filter(function(d){return d.key=="DEMOCRAT";}).values);
-        console.log("Test9");
+        console.log("Test1");
         console.log(yr_data[ind]);
 
         // Draw the line
@@ -148,11 +148,11 @@ function update(ind) {
         .merge(u)
         .transition()
         .duration(2000)
-        .attr("d", d3.line()
+        .attr("d", function(d) {return d3.line()
                 .x(function(d) { return x(d.key);})
                 .y(function(d) { return y(d.value);})
                 (d.values)
-        )
+        )}
         .attr("fill", "none")
         .attr("stroke", d => party_scale(d.key))
         .attr("stroke-width", 2)
