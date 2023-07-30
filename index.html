@@ -110,21 +110,39 @@ function update(ind) {
             })
         })
         .entries(data);
+        log.console(sumstat);
 
         // Draw the line
         ln_svg.selectAll(".line")
         .data(sumstat)
         .enter()
-        .append("path")
+        .append("g")
         .attr("fill", "none")
         .attr("stroke", function(d){ return party_scale(d.key) })
         .attr("stroke-width", 1.5)
         .attr("d", function(d){
           return d3.line()
             .x(function(d) { return x(d.year); })
-            .y(function(d) { return y(d.values); })
+            .y(function(d) { return y(d.percentvotes); })
             (d.values)
         })
+        
+        //d3.select("svg")
+        //.selectAll(".line")
+        //.append("g")
+        //.attr("class", "line")
+        //.data(sumstat)
+        //.enter()
+        //.append("path")
+        //.attr("d", function (d) {
+        //    return d3.line()
+        //        .x(d => x(d.year))
+        //        .y(d => y(d.values))
+        //        (d.values)
+        //})
+        //.attr("fill", "none")
+        //.attr("stroke", d => party_scale(d.key))
+        //.attr("stroke-width", 2)
     })
 }
 
