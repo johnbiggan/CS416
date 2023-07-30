@@ -22,9 +22,8 @@
 
 </head>
 
-<div id="desc_viz"></div>
-
 <div id="container">
+    <div class="desc_viz"></div>
     <div class="states_viz"></div>
     <div class="line_viz"></div>
 </div>
@@ -141,7 +140,7 @@ d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_data
 
 function update(ind,year) {
 
-    d3.select("#desc_viz")
+    d3.select(".desc_viz")
         .text(desc_data[ind]);
     
 }
