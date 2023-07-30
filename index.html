@@ -124,62 +124,62 @@ var y_axis = d3.axisLeft().scale(y).ticks(5);//.tickFormat(d3.format(".0%"));
 svg.append("g")
 .call(y_axis);
 
-      const labels = [
-        {
-          data: {year: 1979, y_val: 36700000, title: "Iran Hostage Crisis"},
-          dy: 50,
-          dx: 20,
+const labels = [
+  {
+    data: {year: 1979, y_val: 36700000, title: "Iran Hostage Crisis"},
+    dy: 50,
+    dx: 20,
 	  note: { align: "middle"}
-        },
+  },
 	{
-          data: {year: 1980, y_val: 6505863, title: "Illini John B Anderson (I)"},
-          dy: -10,
-          dx: 60,
+    data: {year: 1980, y_val: 6505863, title: "Illini John B Anderson (I)"},
+    dy: -10,
+    dx: 60,
 	  note: { align: "middle"}
-        },
-        {
-          data: {year: 1987, y_val: 50000000, title: "Iran-Contra Scandal"},
-          dy: -50,
-          dx: 0,
-          note: { align: "middle"}
-        },
+  },
+  {
+    data: {year: 1987, y_val: 50000000, title: "Iran-Contra Scandal"},
+    dy: -50,
+    dx: 0,
+    note: { align: "middle"}
+  },
 	{
-          data: {year: 1992, y_val: 20663272, title: "Ross Perot (I)"},
-          dy: 0,
-          dx: 50
-        },
+    data: {year: 1992, y_val: 20663272, title: "Ross Perot (I)"},
+    dy: 0,
+    dx: 50
+  },
 	{
-          data: {year: 1998, y_val: 49000000, title: "First Budget Surplus in Recent Years"},
-          dy: -20,
-          dx: -1
-        },
+    data: {year: 1998, y_val: 49000000, title: "First Budget Surplus in Recent Years"},
+    dy: -20,
+    dx: -1
+  },
 	{
-          data: {year: 2003, y_val: 59000000, title: "War in Iraq"},
-          dy: -60,
-          dx: -10
-        },
-        {
-          data: {year: 2004, y_val: 61872711, title: "Last Republican Popular Vote Win"},
-          dy: 50,
-          dx: 0
-        },
+    data: {year: 2003, y_val: 59000000, title: "War in Iraq"},
+    dy: -60,
+    dx: -10
+  },
+  {
+    data: {year: 2004, y_val: 61872711, title: "Last Republican Popular Vote Win"},
+    dy: 50,
+    dx: 0
+  },
 	{
-          data: {year: 2008, y_val: 69338846, title: "The Great Recession"},
-          dy: -50,
-          dx: -20
-        },
+    data: {year: 2008, y_val: 69338846, title: "The Great Recession"},
+    dy: -50,
+    dx: -20
+  },
 	{
-          data: {year: 2019, y_val: 77500000, title: "COVID-19"},
-          dy: 0,
-          dx: -20
-        }
-      ].map(l => {
-        l.note = Object.assign({}, l.note, { title: `${l.data.title}`,
-          label: `${l.data.year}`})
-        l.subject = { radius: 4}
+    data: {year: 2019, y_val: 77500000, title: "COVID-19"},
+    dy: 0,
+    dx: -20
+  }
+].map(l => {
+  l.note = Object.assign({}, l.note, { title: `${l.data.title}`,
+    label: `${l.data.year}`})
+  l.subject = { radius: 4}
 
-        return l
-      })
+  return l
+})
 
 svg.append("circle").attr("cx",500).attr("cy",290).attr("r", 6).style("fill", colors[0])
 svg.append("circle").attr("cx",500).attr("cy",320).attr("r", 6).style("fill", colors[1])
