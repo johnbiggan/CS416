@@ -106,8 +106,8 @@ function update(ind) {
         .key(function(d) { return d.party_simplified;})
         .key(function(d) { return d.year;})
         .rollup(function(leaves){
-            return d3.sum(leaves, function(d){
-                return d.percentvotes;
+            return d3.sum(leaves, function(c){
+                return c.percentvotes;
             })
         })
         .entries(data);
