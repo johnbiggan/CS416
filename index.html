@@ -136,7 +136,7 @@ function update(ind) {
         .data(sumstat)
         .enter()
         .append("path")
-        .filter(function(c) { return c.key <== ind ;})
+        .filter(function(c) { return c.key <= ind ;})
         .attr("d", function (d) {
             return d3.line()
                 .x(d => x(d.key))
