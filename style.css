@@ -3,3 +3,7 @@
 .line_viz{
   float: left;
 }
+
+#desc_viz{
+  float:right;
+}
