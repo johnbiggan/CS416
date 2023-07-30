@@ -111,10 +111,10 @@ function update(ind) {
                 return c.candidatevotes;
             })
         })
-        .entries(data);
+        .entries(data.filter(function(d){return +d.year<=yr_data[ind]));
         console.log(sumstat);
         console.log(sumstat.filter(function(d){return d.key=="DEMOCRAT";}));
-        console.log(sumstat.filter(function(d){return d.key=="DEMOCRAT";}).values);
+        //console.log(sumstat.filter(function(d){return d.key=="DEMOCRAT";}).values);
         console.log("Test1");
         console.log(yr_data[ind]);
 
