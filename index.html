@@ -114,7 +114,7 @@ function update(ind) {
         console.log(sumstat);
         console.log(sumstat.filter(function(d){return d.key=="DEMOCRAT";}).values);
         console.log(sumstat.filter(function(d){return +d.values.key<=yr_data[ind];}));
-        console.log("Test8");
+        console.log("Test9");
         console.log(yr_data[ind]);
 
         // Draw the line
@@ -142,7 +142,7 @@ function update(ind) {
         .append("path")
         .attr("d", function (d) {
             return d3.line()
-                .x(d => x(d.key))
+                .x(d => x(d.filter(function(c){return +c.key<=yr_data[ind];})))
                 .y(d => y(d.value))
                 (d.values)
         })
