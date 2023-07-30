@@ -112,55 +112,39 @@ function update(ind) {
             })
         })
         .entries(data.filter(function(d){return +d.year<=yr_data[ind];}));
-        console.log(sumstat);
-        console.log(sumstat.filter(function(d){return d.key=="DEMOCRAT";}));
-        //console.log(sumstat.filter(function(d){return d.key=="DEMOCRAT";}).values);
+        
         console.log("Test3");
         console.log(yr_data[ind]);
 
-        // Draw the line
-        //ln_svg.selectAll(".line")
-        //.data(sumstat)
-        //.enter()
-        //.append("g")
-        //.attr("fill", "none")
-        //.attr("stroke", function(d){ return party_scale(d.key) })
-        //.attr("stroke-width", 1.5)
-        //.attr("d", function(d){
-        //  return d3.line()
-        //    .x(function(d) { return x(d.year); })
-        //    .y(function(d) { return y(d.percentvotes); })
-        //    (d.values)
-        //})
-
         var u = ln_svg.selectAll(".line")
         .data(sumstat);
-        //.data([sumstat], function(d){ return d.key });
         
-        u//.selectAll(".line")
-        //.append("g")
-        //.attr("transform", "translate(0," + height + ")")
-        .attr("class", "line")
-        //.data(sumstat.filter(function(d){return d.key=="DEMOCRAT";}))
-        //.data(sumstat)
+        u.attr("class", "line")
         .enter()
         .append("path")
         .merge(u)
         .transition()
         .duration(2000)
-        .attr("d", (function(d) {return d3.line())
+        .attr("d", (function(d) { return d3.line()
                 .x(function(d) { return x(d.key);})
                 .y(function(d) { return y(d.value);})
-                (d.values);
+                (d.values))
               })
         .attr("fill", "none")
         .attr("stroke", d => party_scale(d.key))
-        .attr("stroke-width", 2)
-    })
+        .attr("stroke-width", 2);
 
     sumstat.exit().remove();
+    })
 }
 
 update(0)
   
 </script>
+
+.attr("d", function (d) {
+        return d3.line()
+            .x(d => xScale(d.year))
+            .y(d => yScale(d.spending)).curve(d3.curveCardinal)
+            (d.values)
+    })
