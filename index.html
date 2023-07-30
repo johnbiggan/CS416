@@ -111,7 +111,7 @@ function update(ind) {
                 return c.candidatevotes;
             })
         })
-        .entries(data.filter(function(d){return +d.year<=yr_data[ind];}));
+        .entries([data.filter(function(d){return +d.year<=yr_data[ind];})]);
         
         console.log("Test5");
         console.log(yr_data[ind]);
