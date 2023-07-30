@@ -133,7 +133,7 @@ function update(ind) {
         .append("g")
         .attr("transform", "translate(0," + height + ")")
         .attr("class", "line")
-        .datum(sumstat.filter(function(d){return d.key.key<=ind}))
+        .datum(sumstat.filter(function(d){return d.values.key<=ind}))
         //.data(sumstat)
         .enter()
         .append("path")
