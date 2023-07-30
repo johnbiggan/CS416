@@ -131,6 +131,7 @@ function update(ind) {
         d3.select("svg")
         .selectAll(".line")
         .append("g")
+        .attr("transform", "translate(0," + height + ")")
         .attr("class", "line")
         .data(sumstat)
         .enter()
