@@ -112,7 +112,7 @@ function update(ind) {
         })
         .entries(data);
         console.log(sumstat);
-        console.log(data);
+        //console.log(data);
 
         // Draw the line
         //ln_svg.selectAll(".line")
@@ -139,8 +139,8 @@ function update(ind) {
         .append("path")
         .attr("d", function (d) {
             return d3.line()
-                .x(d => x(d.key))
-                .y(d => y(d.value))
+                .x(d => x(d.key.key))
+                .y(d => y(d.key.value))
                 (d.values)
         })
         .attr("fill", "none")
