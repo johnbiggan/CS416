@@ -1,5 +1,6 @@
 #container,
 .states_viz,
-.line_viz {
+.line_viz,
+.desc_viz{
   float: left;
 }
