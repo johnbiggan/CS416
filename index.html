@@ -141,6 +141,8 @@ function update(ind) {
         //.data(sumstat)
         .enter()
         .append("path")
+        .transition()
+        .duration(2000)
         .attr("d", function (d) {
             return d3.line()
                 .x(d => x(d.key))
@@ -150,8 +152,6 @@ function update(ind) {
         .attr("fill", "none")
         .attr("stroke", d => party_scale(d.key))
         .attr("stroke-width", 2)
-        .transition()
-        .duration(2000)
     })
 }
 
