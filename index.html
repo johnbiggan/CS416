@@ -149,8 +149,8 @@ function update(ind) {
         .duration(2000)
         .attr("d", function (d) {
             return d3.line()
-                .x(d => x(d.key))
-                .y(d => y(d.value))
+                .x(d => (function(d) { return x(d.key);})
+                .y(d => (function(d) { return y(d.value);})
                 (d.values)
         })
         .attr("fill", "none")
