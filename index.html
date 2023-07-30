@@ -129,7 +129,7 @@ function update(ind) {
                 .x(function(d) { return x(d.key);})
                 .y(function(d) { return y(d.value);})
                 (d.values)
-              })
+              }))
         .attr("fill", "none")
         .attr("stroke", (function(d) { return party_scale(d.key);}))
         .attr("stroke-width", 2);
