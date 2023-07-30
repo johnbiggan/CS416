@@ -107,7 +107,7 @@ function update(ind) {
         .key(function(d) { return d.year;})
         .rollup(function(leaves){
             return d3.sum(leaves, function(c){
-                return c.totalvotes;
+                return c.candidatevotes;
             })
         })
         .entries(data);
