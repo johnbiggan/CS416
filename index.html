@@ -114,7 +114,7 @@ function update(ind) {
         .entries(data);
         console.log(sumstat);
         console.log(sumstat.filter(function(d){return d.key=="DEMOCRAT";}).values);
-        console.log(sumstat.filter(function(d){return +d.key.values.key<=yr_data[ind];}));
+        console.log(sumstat.filter(function(d){return +d.values<=ind;}));
         console.log("Test9");
         console.log(yr_data[ind]);
 
