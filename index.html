@@ -133,10 +133,10 @@ function update(ind) {
         .append("g")
         .attr("transform", "translate(0," + height + ")")
         .attr("class", "line")
-        .data(sumstat)
+        .datum(sumstat.filter(function(d){return d.key<=ind}))
+        //.data(sumstat)
         .enter()
         .append("path")
-        .filter(function(c) { return c.key <= ind ;})
         .attr("d", function (d) {
             return d3.line()
                 .x(d => x(d.key))
