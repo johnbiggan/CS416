@@ -139,8 +139,8 @@ function update(ind) {
         .append("path")
         .attr("d", function (d) {
             return d3.line()
-                .x(d => x(d.values.key))
-                .y(d => y(d.values.value))
+                .x(d => x(d.key))
+                .y(d => y(d.value))
                 (d.values)
         })
         .attr("fill", "none")
