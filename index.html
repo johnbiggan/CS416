@@ -115,7 +115,7 @@ function update(ind) {
         console.log(sumstat);
         console.log(sumstat.filter(function(d){return d.key=="DEMOCRAT";}));
         //console.log(sumstat.filter(function(d){return d.key=="DEMOCRAT";}).values);
-        console.log("Test5");
+        console.log("Test6");
         console.log(yr_data[ind]);
 
         // Draw the line
@@ -134,7 +134,8 @@ function update(ind) {
         //})
 
         var u = ln_svg.selectAll(".line")
-        .data(sumstat);
+        //.data(sumstat);
+        .data([sumstat], function(d){ return d.key });
         
         u//.selectAll(".line")
         //.append("g")
