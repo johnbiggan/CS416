@@ -71,8 +71,8 @@ var ln_svg = d3.select(".line_viz")
           "translate(" + margin.left + "," + margin.top + ")");
 
 // Set the ranges
-var x = d3.scale.linear().range([0, width]);
-var y = d3.scale.linear().range([height, 0]);
+var x = d3.scaleLinear().range([0, width]);
+var y = d3.scaleLinear().range([height, 0]);
 
 // Define the axes
 var x_axis = d3.svg.axis().scale(x)
