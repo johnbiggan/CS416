@@ -145,6 +145,8 @@ function update(ind) {
         .attr("fill", "none")
         .attr("stroke", d => party_scale(d.key))
         .attr("stroke-width", 2)
+        .transition()
+        .duration(2000)
     })
 }
 
