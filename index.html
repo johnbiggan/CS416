@@ -129,8 +129,7 @@ function update(ind) {
         //    (d.values)
         //})
         
-        d3.select("svg")
-        .selectAll(".line")
+        ln_svg.selectAll(".line")
         .append("g")
         .attr("transform", "translate(0," + height + ")")
         .attr("class", "line")
