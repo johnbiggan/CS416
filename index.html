@@ -139,6 +139,7 @@ d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_data
 })
 
 function update(ind,year) {
+    consol.log(yr_data[ind]);
 
     d3.select(".desc_viz")
         .text(desc_data[ind]);
