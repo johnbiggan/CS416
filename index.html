@@ -132,15 +132,19 @@ function update(ind) {
         //    .y(function(d) { return y(d.percentvotes); })
         //    (d.values)
         //})
+
+        var u = ln_svg.selectAll(".line")
+        .data(sumstat);
         
-        ln_svg.selectAll(".line")
-        .append("g")
+        u//.selectAll(".line")
+        //.append("g")
         //.attr("transform", "translate(0," + height + ")")
         .attr("class", "line")
         //.data(sumstat.filter(function(d){return d.key=="DEMOCRAT";}))
-        .data(sumstat)
+        //.data(sumstat)
         .enter()
         .append("path")
+        .merge(u)
         .transition()
         .duration(2000)
         .attr("d", function (d) {
