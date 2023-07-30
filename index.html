@@ -90,7 +90,7 @@ ln_svg.append("g")
 //    .y(function(d) { return y(d.vote_perc); });
 
 var party_scale = d3.scaleOrdinal()
-    .domain(["Democratic", "Republican", "Libertarian", "Other"])
+    .domain(["DEMOCRAT", "REPUBLICAN", "LIBERTARIAN", "OTHER"])
     .range(["blue", "red", "yellow", "grey"]);
 
 function update(ind) {
