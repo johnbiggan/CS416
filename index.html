@@ -137,8 +137,8 @@ function update(ind) {
         .append("g")
         //.attr("transform", "translate(0," + height + ")")
         .attr("class", "line")
-        //.data(sumstat.filter(function(d){return d.values.key<=ind}))
-        .data(sumstat)
+        .data(sumstat.filter(function(d){return d.key=="DEMOCRAT";}))
+        //.data(sumstat)
         .enter()
         .append("path")
         .attr("d", function (d) {
