@@ -36,7 +36,7 @@ var yr_data = [
 ];
 
 var yr_rg_data = [
-    '1972-1976','1972-1980','1972-1992','1972-2000','1972-2008','1972-2016','1972-2020'
+    '1976','1976-1980','1976-1992','1976-2000','1976-2008','1976-2016','1976-2020'
 ];
 
 var desc_data = [
@@ -75,7 +75,7 @@ var x = d3.scaleLinear().range([0, width]).domain([d3.min(yr_data),d3.max(yr_dat
 var y = d3.scaleLinear().range([height, 0]).domain([0,90000000]);
 
 // Define the axes
-var x_axis = d3.axisBottom().scale(x).ticks(13).tickFormat(d3.format("d"));
+var x_axis = d3.axisBottom().scale(x).ticks(12).tickFormat(d3.format("d"));
 ln_svg.append("g")
 .attr("transform", "translate(0," + height + ")")
 .call(x_axis);
@@ -111,7 +111,7 @@ function update(ind) {
             })
         })
         .entries(data);
-        console.log(sumstat);
+        console.log(sumstat.filter(function(d){return d.values.key<=ind}));
         console.log("Test2");
         //console.log(data);
 
