@@ -1,12 +1,6 @@
-#container,
-.states_viz,
-.line_viz{
-  float: left;
-}
-
 #desc_viz{
    position:relative;
    bottom:0;
-   width:100%;
+   width:700px;
    height:60px;
 }
