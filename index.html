@@ -148,15 +148,17 @@ function update(ind) {
         .merge(u)
         .transition()
         .duration(2000)
-        .attr("d", (function(d) {return d3.line();})
+        .attr("d", (function(d) {return d3.line())
                 .x(function(d) { return x(d.key);})
                 .y(function(d) { return y(d.value);})
-                (d.values)
-            )
+                (d.values);
+              })
         .attr("fill", "none")
         .attr("stroke", d => party_scale(d.key))
         .attr("stroke-width", 2)
     })
+
+    sumstat.exit().remove();
 }
 
 update(0)
