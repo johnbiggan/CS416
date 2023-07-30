@@ -75,8 +75,14 @@ var x = d3.scaleLinear().range([0, width]).domain([d3.min(yr_data),d3.max(yr_dat
 var y = d3.scaleLinear().range([height, 0]).domain([0,100]);
 
 // Define the axes
-var x_axis = d3.axisBottom().scale(x);
-var y_axis = d3.axisLeft().scale(y);
+var x_axis = d3.axisBottom().scale(x).ticks(13);
+ln_svg.append("g")
+.attr("transform", "translate(0," + height + ")")
+.call(x_axis);
+    
+var y_axis = d3.axisLeft().scale(y).ticks(4);
+svg.append("g")
+.call(y_axis);
 
 // Define the line
 var vote_line = d3.svg.line()
