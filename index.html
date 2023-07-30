@@ -131,7 +131,7 @@ function update(ind) {
                 (d.values)
               })
         .attr("fill", "none")
-        .attr("stroke", d => party_scale(d.key))
+        .attr("stroke", (function(d) { return party_scale(d.key);}))
         .attr("stroke-width", 2);
 
     sumstat.exit().remove();
