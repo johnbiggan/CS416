@@ -50,6 +50,57 @@ var desc_data = [
     'In the midst of COVID-19 and social unrest, former Vice President Joe Biden (D) was elected President.'
 ];
 
+var vote_data = [
+    {year: 1976, party: 'Democratic', candidateVotes: 40680446, totalVotes: 81601344, percentVotes: 0.498526666423533},
+    {year: 1980, party: 'Democratic', candidateVotes: 35480948, totalVotes: 86496851, percentVotes: 0.410199303093705},
+    {year: 1984, party: 'Democratic', candidateVotes: 37449813, totalVotes: 92654861, percentVotes: 0.404186165688598},
+    {year: 1988, party: 'Democratic', candidateVotes: 41716679, totalVotes: 91586825, percentVotes: 0.455487773487071},
+    {year: 1992, party: 'Democratic', candidateVotes: 44856747, totalVotes: 104599780, percentVotes: 0.428841695460545},
+    {year: 1996, party: 'Democratic', candidateVotes: 47295351, totalVotes: 96389818, percentVotes: 0.490667499756043},
+    {year: 2000, party: 'Democratic', candidateVotes: 50830580, totalVotes: 105593982, percentVotes: 0.481377622448219},
+    {year: 2004, party: 'Democratic', candidateVotes: 58894561, totalVotes: 124733688, percentVotes: 0.472162428164555},
+    {year: 2008, party: 'Democratic', candidateVotes: 69338846, totalVotes: 131419253, percentVotes: 0.5276155846054},
+    {year: 2012, party: 'Democratic', candidateVotes: 65752017, totalVotes: 129139997, percentVotes: 0.509153000832112},
+    {year: 2016, party: 'Democratic', candidateVotes: 65677288, totalVotes: 142141798, percentVotes: 0.462054715249908},
+    {year: 2020, party: 'Democratic', candidateVotes: 81268908, totalVotes: 158528503, percentVotes: 0.51264540106078},
+    {year: 1976, party: 'Republican', candidateVotes: 38870893, totalVotes: 81601344, percentVotes: 0.476351137059703},
+    {year: 1980, party: 'Republican', candidateVotes: 43642639, totalVotes: 86496851, percentVotes: 0.504557547418692},
+    {year: 1984, party: 'Republican', candidateVotes: 54166829, totalVotes: 92654861, percentVotes: 0.584608604614927},
+    {year: 1988, party: 'Republican', candidateVotes: 48642640, totalVotes: 91586825, percentVotes: 0.531109578260847},
+    {year: 1992, party: 'Republican', candidateVotes: 38798913, totalVotes: 104599780, percentVotes: 0.370927290669254},
+    {year: 1996, party: 'Republican', candidateVotes: 39003697, totalVotes: 96389818, percentVotes: 0.404645405596678},
+    {year: 2000, party: 'Republican', candidateVotes: 50311372, totalVotes: 105593982, percentVotes: 0.476460599809561},
+    {year: 2004, party: 'Republican', candidateVotes: 61872711, totalVotes: 122349450, percentVotes: 0.505704856049619},
+    {year: 2008, party: 'Republican', candidateVotes: 59613835, totalVotes: 131419253, percentVotes: 0.453615689019325},
+    {year: 2012, party: 'Republican', candidateVotes: 60670117, totalVotes: 129139997, percentVotes: 0.469801133726215},
+    {year: 2016, party: 'Republican', candidateVotes: 62692670, totalVotes: 139568633, percentVotes: 0.449188823107553},
+    {year: 2020, party: 'Republican', candidateVotes: 74216146, totalVotes: 158528503, percentVotes: 0.468156480352306},
+    {year: 1976, party: 'Libertarian', candidateVotes: 95626, totalVotes: 81601344, percentVotes: 0.00117186795354743},
+    {year: 1980, party: 'Libertarian', candidateVotes: 867401, totalVotes: 86496851, percentVotes: 0.0100281222954579},
+    {year: 1984, party: 'Libertarian', candidateVotes: 227204, totalVotes: 92654861, percentVotes: 0.00245215412929064},
+    {year: 1988, party: 'Libertarian', candidateVotes: 409708, totalVotes: 91586825, percentVotes: 0.00447343818283907},
+    {year: 1992, party: 'Libertarian', candidateVotes: 280848, totalVotes: 104599780, percentVotes: 0.00268497696649075},
+    {year: 1996, party: 'Libertarian', candidateVotes: 465351, totalVotes: 96389818, percentVotes: 0.00482780245523443},
+    {year: 2000, party: 'Libertarian', candidateVotes: 380405, totalVotes: 105593982, percentVotes: 0.00360252537876638},
+    {year: 2004, party: 'Libertarian', candidateVotes: 369308, totalVotes: 122349450, percentVotes: 0.00301846882025215},
+    {year: 2008, party: 'Libertarian', candidateVotes: 510456, totalVotes: 131419253, percentVotes: 0.00388417974039162},
+    {year: 2012, party: 'Libertarian', candidateVotes: 1216400, totalVotes: 129139997, percentVotes: 0.00941923515764059},
+    {year: 2016, party: 'Libertarian', candidateVotes: 4125170, totalVotes: 139568633, percentVotes: 0.0295565694907967},
+    {year: 2020, party: 'Libertarian', candidateVotes: 1797355, totalVotes: 158528503, percentVotes: 0.0113377403179036},
+    {year: 1976, party: 'Other', candidateVotes: 1954379, totalVotes: 81601344, percentVotes: 0.0239503285632158},
+    {year: 1980, party: 'Other', candidateVotes: 6505863, totalVotes: 86496851, percentVotes: 0.075215027192146},
+    {year: 1984, party: 'Other', candidateVotes: 811015, totalVotes: 92654861, percentVotes: 0.00875307556718476},
+    {year: 1988, party: 'Other', candidateVotes: 817798, totalVotes: 91586825, percentVotes: 0.00892921006924304},
+    {year: 1992, party: 'Other', candidateVotes: 20663272, totalVotes: 104599780, percentVotes: 0.197546036903711},
+    {year: 1996, party: 'Other', candidateVotes: 9625419, totalVotes: 96389818, percentVotes: 0.0998592921920446},
+    {year: 2000, party: 'Other', candidateVotes: 4071625, totalVotes: 105593982, percentVotes: 0.0385592523634538},
+    {year: 2004, party: 'Other', candidateVotes: 1212870, totalVotes: 124733688, percentVotes: 0.00972367625336308},
+    {year: 2008, party: 'Other', candidateVotes: 1956116, totalVotes: 131419253, percentVotes: 0.0148845466348831},
+    {year: 2012, party: 'Other', candidateVotes: 1501463, totalVotes: 129139997, percentVotes: 0.011626630284032},
+    {year: 2016, party: 'Other', candidateVotes: 4292059, totalVotes: 142141798, percentVotes: 0.0301956149450143},
+    {year: 2020, party: 'Other', candidateVotes: 1246094, totalVotes: 158528503, percentVotes: 0.00786037826901072}
+];
+
 var margin = {top: 10, right: 30, bottom: 30, left: 60},
     width = 700 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
@@ -116,7 +167,7 @@ function update(ind) {
         .entries(data.filter(function(d){return +d.year<=yr_data[ind];}));
 
         console.log(sumstat);
-        console.log("Test1");
+        console.log("Test2");
         console.log(yr_data[ind]);
 
         var u = ln_svg.selectAll(".line")
