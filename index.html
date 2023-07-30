@@ -85,9 +85,9 @@ ln_svg.append("g")
 .call(y_axis);
 
 // Define the line
-var vote_line = d3.svg.line()
-    .x(function(d) { return x(d.year); })
-    .y(function(d) { return y(d.vote_perc); });
+//var vote_line = d3.svg.line()
+//    .x(function(d) { return x(d.year); })
+//    .y(function(d) { return y(d.vote_perc); });
 
 var party_scale = d3.scaleOrdinal()
     .domain(["Democratic", "Republican", "Libertarian", "Other"])
@@ -100,6 +100,28 @@ function update(ind) {
         .text(desc_data[ind]);
     d3.select("#subtitle")
         .text(yr_rg_data[ind]);
+
+    d3.csv("1976-2020-president.csv", function(data) {
+        // group the data: I want to draw one line per group
+        var sumstat = d3.nest() // nest function allows to group the calculation per level of a factor
+        .key(function(d) { return d.party_simplified;})
+        .entries(data);
+
+        // Draw the line
+        svg.selectAll(".line")
+        .data(sumstat)
+        .enter()
+        .append("path")
+        .attr("fill", "none")
+        .attr("stroke", function(d){ return party_scale(d.key) })
+        .attr("stroke-width", 1.5)
+        .attr("d", function(d){
+          return d3.line()
+            .x(function(d) { return x(d.year); })
+            .y(function(d) { return y(d.percentvotes); })
+            (d.values)
+        })
+    }
     
 }
 
