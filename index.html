@@ -72,7 +72,7 @@ var ln_svg = d3.select(".line_viz")
 
 // Set the ranges
 var x = d3.scaleLinear().range([0, width]).domain([d3.min(yr_data),d3.max(yr_data)]);
-var y = d3.scaleLinear().range([height, 0]).domain([0,100000000]);
+var y = d3.scaleLinear().range([height, 0]).domain([0,90000000]);
 
 // Define the axes
 var x_axis = d3.axisBottom().scale(x).ticks(13).tickFormat(d3.format("d"));
