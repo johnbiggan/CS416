@@ -100,6 +100,8 @@ function update(ind) {
     d3.select("#subtitle")
         .text(yr_rg_data[ind]);
 
+    ln_svg.exit().remove();
+
     d3.csv("1976-2020-president.csv", function(error,data) {
         if (error) throw error;
         // group the data: I want to draw one line per group
@@ -136,7 +138,6 @@ function update(ind) {
         .attr("stroke-width", 2);
 
     //sumstat.exit().remove();
-    ln_svg.exit().remove();
     })
 }
 
