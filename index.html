@@ -50,11 +50,6 @@ var desc_data = [
     'In the midst of COVID-19 and social unrest, former Vice President Joe Biden (D) was elected President.'
 ];
 
-var ln_data = [
-    {year: 1972, party: "Democratic", vote_perc: 98.5},
-    {year: 1972, party: "Republican", vote_perc: 98.5}
-];
-
 var margin = {top: 10, right: 30, bottom: 30, left: 60},
     width = 800 - margin.left - margin.right,
     height = 600 - margin.top - margin.bottom;
@@ -75,9 +70,24 @@ var ln_svg = d3.select(".line_viz")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
 
-var pres_data = d3.csv("1976-2020-president.csv", function(d) {return d;})
+// Parse the date / time
+var parseDate = d3.time.format("%b %Y").parse; 
 
-console.log(pres_data);
+// Set the ranges
+var x = d3.time.scale().range([0, width]);
+var y = d3.scale.linear().range([height, 0]);
+
+// Define the axes
+var xAxis = d3.svg.axis().scale(x)
+    .orient("bottom").ticks(13);
+
+var yAxis = d3.svg.axis().scale(y)
+    .orient("left").ticks(4);
+
+// Define the line
+var priceline = d3.svg.line()
+    .x(function(d) { return x(d.year); })
+    .y(function(d) { return y(d.vote_perc); });
     
 d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/3_TwoNumOrdered_comma.csv",
 
