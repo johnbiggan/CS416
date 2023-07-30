@@ -141,10 +141,3 @@ function update(ind) {
 update(0)
   
 </script>
-
-.attr("d", function (d) {
-        return d3.line()
-            .x(d => xScale(d.year))
-            .y(d => yScale(d.spending)).curve(d3.curveCardinal)
-            (d.values)
-    })
