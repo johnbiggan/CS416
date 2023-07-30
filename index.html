@@ -107,7 +107,7 @@ function update(ind) {
         .rollup(function(leaves){
             return d3.sum(leaves, function(d){
                 return d.percentvotes;
-            });
+            })
         })
         .entries(data);
 
